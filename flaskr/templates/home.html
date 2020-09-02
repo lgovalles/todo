@@ -1,7 +1,26 @@
 {% extends 'layout.html'%} {% block body%}
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-3">
+      <h2>Projets</h2>
+      <ul class="task-list" data-lists>
+        <!-- <li class="list-name active-list"><a href="">Todo</a></li>
+        <li class="list-name">Work</li>
+        <li class="list-name">Grocery</li> -->
+      </ul>
+      <form action="" data-new-list-form>
+        <input
+          type="text"
+          class="new list"
+          data-new-list-input
+          placeholder="new list name"
+          aria-label="new list name"
+        />
+        <button class="btn create" aria-label="Create new List">+</button>
+      </form>
+      <button class="btn delete" data-delete-list-button>Delete list</button>
+    </div>
+    <div class="col-md-6">
       <div class="card">
         <div class="card-header">For Today</div>
         <div class="card-body">
@@ -14,7 +33,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="card">
         <div class="card-header">For this week</div>
         <div class="card-body">
@@ -29,4 +48,6 @@
     </div>
   </div>
 </div>
+
+<script src="{{url_for('static',filename='js/todo.js')}}"></script>
 {% endblock %}
